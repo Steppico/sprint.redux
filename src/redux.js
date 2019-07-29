@@ -38,10 +38,9 @@ const reducer = (state = [], action) => {
     }
     case "PATCH_PROJECT": {
       const { param, body } = action.project;
-      state.map((item) =>
+      return state.map((item) =>
         item.id === Number(param) ? Object.assign(item, body) : item
       );
-      return state;
     }
   }
   return state;
