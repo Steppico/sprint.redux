@@ -14,7 +14,8 @@ const projEndPoint = `${endPoint}/projects`;
 
 let insertedProjects;
 
-const projUrl = (id) => `${projEndPoint}/${insertedProjects[id].id}`;
+const projUrl = (id) =>
+  `${projEndPoint}/${insertedProjects[id].projects.project.id}`;
 const projBuilds = (id) => `${projUrl(id)}/builds`;
 const buildUrl = (projId, buildId) => `${projUrl(projId)}/builds/${buildId}`;
 const req = (url, options) =>
@@ -102,7 +103,7 @@ const testDelete = async () => {
   await fetch(projUrl(1), { method: "DELETE" });
   const { projects } = await getJson(projEndPoint);
   projects.length.should.equal(2);
-  projects[1].id.should.equal(insertedProjects[2].id);
+  projects[1].id.should.equal(insertedProjects[2].projects.project.id);
 };
 
 const testPatch = async () => {
