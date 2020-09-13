@@ -25,7 +25,7 @@
     "eslint-plugin-prettier": "^3.0.0",
     "husky": "^1.1.2",
     "mocha": "^5.2.0",
-    "node-fetch": "^2.2.0",
+    "node-fetch": "^2.6.1",
     "nodemon": "^1.18.5",
     "prettier": "^1.14.3",
     "pretty-quick": "^1.8.0"
